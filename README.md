@@ -1,1 +1,1 @@
-# silence_updater
+# silence

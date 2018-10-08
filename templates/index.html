@@ -1,0 +1,77 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+{{ range $value := . }}
+
+<div class="row">
+
+
+	<p style="text-align: justify;">	{{ $value.Content }} </p>
+
+	<a href="/">
+		<p style="text-align: center; font-weight:bold; font-size: 2em">N E X T</p>
+	</a>
+
+<!--	<div class="bubble" >
+		<div class="rounded" style="color:gray; background: black;">
+			<blockquote>
+			<p>	{{ $value.Content }} </p>
+			</blockquote>
+		</div>
+	</div>
+
+	<a href="/">
+		<div class="bubble" >
+			<div class="rounded" style="color:green; background: black; width: 130px;margin: 0px 40% 80px;">
+				<blockquote>
+					<p style="text-align: center; font-weight:bold">NEXT</p>
+				</blockquote>
+			</div>
+		</div>
+	</a>-->
+
+
+
+
+
+
+
+
+
+
+<!--	<div class="bubble" >
+		<div class="rounded">
+			<blockquote>
+				<p>Customize colors and styling to your taste from within the CSS, then simply edit the pointer tip image. Works on any background to fit with your design.</p>
+			</blockquote>
+		</div>
+	</div>
+
+	<div class="bubble" >
+		<div class="rounded">
+			<blockquote>
+				<p>Customize colors and stylinfbgklnr;fsgbjgfb nfjab n;jdzfnb;jdzfnb rebaeb aeb;oaef b;kaebo hna;fob no;jsrnfbo;k njrg;sfbn;orgsb;orgfsnb;osgnfg to your taste from within the CSS, then simply edit the pointer tip image. Works on any background to fit with your design.</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="bubble" >
+		<div class="rounded">
+			<blockquote>
+				<p>Customize colors and styling to your taste from within the CSS, then simply edit the pointer tip image. Works on any background to fit with your design.</p>
+			</blockquote>
+		</div>
+	</div>
+
+
+
+	<button type="submit" class="btn btn-default">Add comment</button>
+	<textarea id="comment" name="comment">{{.Comment}}</textarea>-->
+
+
+</div>
+{{ end }}
+
+{{ template "footer" }}
+
+{{ end }}

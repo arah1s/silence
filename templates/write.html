@@ -1,0 +1,24 @@
+{{ define "write" }}
+
+{{ template "header" }}
+
+<div class="row">
+	<div class="col-xs-4">
+	</div>
+	<div class="col-xs-4">
+		<form role="form" method="POST" action="/SavePost">
+			<input type="hidden" name="id" value="{{.Id}}" />
+			<div style="margin: 0px -100% 25%;">
+				<div class="form-group">
+					<label>Расскажи свою историю</label>
+					<textarea id="content" name="content">{{.Content}}</textarea>
+				</div>
+				<button type="submit" class="btn btn-default">Опубликовать</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{{ template "footer" }}
+
+{{ end }}
