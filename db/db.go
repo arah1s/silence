@@ -7,7 +7,6 @@ import (
 	"fmt"
 	_ "github.com/lib/pq"
 	"log"
-	"math/rand"
 	"strconv"
 	"time"
 )
@@ -123,14 +122,19 @@ func getStringFromDB(db *sql.DB, query string) (result string) {
 
 //getRandomPostFromDB
 func GetRandomPostFromDB(db *sql.DB) (post Post) {
-	query := "select max(id) from posts"
+/*	query := "select max(id) from posts"
 	maxID, _ := strconv.Atoi(getStringFromDB(db, query))
 	randomID := rand.Intn(maxID)
-	fmt.Println(randomID)
+
 	query = fmt.Sprintf("select posts.id, likes, dislikes, url, text from posts "+
 		"join resources on posts.resource_id = resources.id "+
 		"join post_description on posts.id = post_description.post_id "+
-		"where posts.active = true and resources.active = true and posts.id >= %d limit 1;", randomID)
+		"where posts.active = true and resources.active = true and posts.id >= %d limit 1;", randomID)*/
+	query := "select posts.id, likes, dislikes, url, text from posts "+
+		"join resources on posts.resource_id = resources.id "+
+		"join post_description on posts.id = post_description.post_id "+
+		"where posts.active = true and resources.active = true ORDER BY RANDOM() limit 1;"
+
 	rows, err := db.Query(query)
 	if err != nil {
 		log.Fatal(err)
